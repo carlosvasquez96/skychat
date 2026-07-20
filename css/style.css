@@ -1,0 +1,73 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Overall page */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f7fb;
+    color: #333;
+}
+
+/* Header section */
+header {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+/* Main title */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+/* Subtitle */
+header p {
+    font-size: 1.2rem;
+}
+
+/* Main content */
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Welcome card */
+.welcome {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.welcome h2 {
+    margin-bottom: 15px;
+}
+
+.welcome p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* Button */
+button {
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #003d80;
+}
