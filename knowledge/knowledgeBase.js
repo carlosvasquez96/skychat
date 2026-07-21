@@ -1,6 +1,9 @@
 const knowledgeBase = [
     {
         topic: "Password Reset",
+
+        category: "Account Access",
+
         keywords: [
             "password",
             "reset",
@@ -10,11 +13,21 @@ const knowledgeBase = [
             "locked out",
             "login"
         ],
+
+        summary:
+            "Reset your Skyward password or recover a locked account.",
+
         answer:
-            "To reset your Skyward password, use your district password-reset process. If your account is locked or the reset does not work, contact the IT help desk at 273-1360."
+            "To reset your Skyward password, use your district password-reset process. If your account is locked or the reset does not work, contact the IT help desk at 273-1360.",
+
+        related: [
+            "Support"
+        ]
     },
+
     {
         topic: "Attendance",
+
         keywords: [
             "attendance",
             "absent",
@@ -22,11 +35,14 @@ const knowledgeBase = [
             "tardy",
             "present"
         ],
+
         answer:
             "For attendance help, open Skyward, select the correct class, and open the attendance screen. Verify the date and class period before submitting attendance."
     },
+
     {
         topic: "Gradebook",
+
         keywords: [
             "gradebook help",
             "open gradebook",
@@ -36,11 +52,14 @@ const knowledgeBase = [
             "enter grades",
             "grading period selected"
         ],
+
         answer:
             "For gradebook help, open the appropriate class gradebook and verify that the correct grading period is selected. Then locate the assignment or student record you need."
     },
+
     {
         topic: "Enrollment",
+
         keywords: [
             "enrollment",
             "enroll",
@@ -48,11 +67,14 @@ const knowledgeBase = [
             "register",
             "new student"
         ],
+
         answer:
             "For student enrollment or registration assistance, contact the district registration department or submit a support request."
     },
+
     {
         topic: "Support",
+
         keywords: [
             "support",
             "ticket",
@@ -60,11 +82,16 @@ const knowledgeBase = [
             "technical support",
             "contact"
         ],
+
         answer:
             "For additional assistance, please contact the IT help desk or submit a district support request."
     },
+
     {
         topic: "Grade Changes After Posting",
+
+        category: "Gradebook",
+
         keywords: [
             "grade change",
             "change grade",
@@ -85,8 +112,12 @@ const knowledgeBase = [
             "wrong grade",
             "grade correction"
         ],
+
+        summary:
+            "Correct grades after they have already been posted.",
+
         answer:
-            `To change grades after they have been posted:
+`To change grades after they have been posted:
 
 1. Open Grade Posting Status.
 2. Select the grading period you want to change.
@@ -96,6 +127,11 @@ const knowledgeBase = [
 6. Click Yes.
 7. Make the necessary grade changes.
 8. Click Save.
-9. Click Complete Grade Changes when finished.`
+9. Click Complete Grade Changes when finished.`,
+
+        related: [
+            "Gradebook",
+            "Support"
+        ]
     }
 ];

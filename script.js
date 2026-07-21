@@ -3,6 +3,7 @@ const sendButton = document.getElementById("sendButton");
 const chatMessages = document.getElementById("chatMessages");
 const suggestions = document.getElementById("suggestions");
 
+// Displays a regular user or bot message.
 function addMessage(message, sender) {
     const messageDiv = document.createElement("div");
 
@@ -20,6 +21,90 @@ function addMessage(message, sender) {
     chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
+// Displays a knowledge-base article as a formatted card.
+function addArticleCard(article) {
+    const messageDiv = document.createElement("div");
+    messageDiv.classList.add("message", "bot-message", "article-message");
+
+    const card = document.createElement("div");
+    card.classList.add("response-card");
+
+    // Article title
+    const title = document.createElement("h3");
+    title.classList.add("response-title");
+    title.textContent = article.topic;
+    card.appendChild(title);
+
+    // Category
+    if (article.category) {
+        const category = document.createElement("span");
+        category.classList.add("category-badge");
+        category.textContent = article.category;
+        card.appendChild(category);
+    }
+
+    // Summary
+    if (article.summary) {
+        const summaryLabel = document.createElement("p");
+        summaryLabel.classList.add("section-label");
+        summaryLabel.textContent = "Summary";
+
+        const summary = document.createElement("p");
+        summary.classList.add("response-summary");
+        summary.textContent = article.summary;
+
+        card.appendChild(summaryLabel);
+        card.appendChild(summary);
+    }
+
+    // Main answer
+    const divider = document.createElement("hr");
+    divider.classList.add("response-divider");
+    card.appendChild(divider);
+
+    const answer = document.createElement("div");
+    answer.classList.add("response-answer");
+    answer.textContent = article.answer;
+    card.appendChild(answer);
+
+    // Related articles
+    if (article.related && article.related.length > 0) {
+        const relatedDivider = document.createElement("hr");
+        relatedDivider.classList.add("response-divider");
+        card.appendChild(relatedDivider);
+
+        const relatedTitle = document.createElement("p");
+        relatedTitle.classList.add("section-label");
+        relatedTitle.textContent = "Related Articles";
+        card.appendChild(relatedTitle);
+
+        const relatedContainer = document.createElement("div");
+        relatedContainer.classList.add("related-articles");
+
+        article.related.forEach(function (relatedTopic) {
+            const relatedButton = document.createElement("button");
+
+            relatedButton.type = "button";
+            relatedButton.classList.add("related-button");
+            relatedButton.textContent = relatedTopic;
+
+            relatedButton.addEventListener("click", function () {
+                openRelatedArticle(relatedTopic);
+            });
+
+            relatedContainer.appendChild(relatedButton);
+        });
+
+        card.appendChild(relatedContainer);
+    }
+
+    messageDiv.appendChild(card);
+    chatMessages.appendChild(messageDiv);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+// Finds the best article for the user's question.
 function getBotResponse(question) {
     const text = question.toLowerCase();
 
@@ -41,11 +126,43 @@ function getBotResponse(question) {
         }
     }
 
-    if (bestMatch) {
-        return bestMatch.answer;
+    return bestMatch;
+}
+
+// Opens an article when a related-article button is clicked.
+function openRelatedArticle(topic) {
+    const article = knowledgeBase.find(function (item) {
+        return item.topic.toLowerCase() === topic.toLowerCase();
+    });
+
+    addMessage(topic, "user");
+
+    if (!article) {
+        addMessage(
+            "That related article has not been completed yet.",
+            "bot"
+        );
+
+        return;
     }
 
-    return "I'm sorry, I couldn't find an answer for that question yet.";
+    showTypingIndicator(article);
+}
+
+// Shows the typing message and then displays the article.
+function showTypingIndicator(article) {
+    const typingMessage = document.createElement("div");
+
+    typingMessage.classList.add("message", "bot-message");
+    typingMessage.textContent = "Sky Chatbox is typing...";
+
+    chatMessages.appendChild(typingMessage);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+    setTimeout(function () {
+        typingMessage.remove();
+        addArticleCard(article);
+    }, 800);
 }
 
 function sendMessage() {
@@ -61,20 +178,27 @@ function sendMessage() {
     hideSuggestions();
     userInput.focus();
 
-    const typingMessage = document.createElement("div");
+    const article = getBotResponse(question);
 
-    typingMessage.classList.add("message", "bot-message");
-    typingMessage.textContent = "Sky Chatbox is typing...";
+    if (article) {
+        showTypingIndicator(article);
+    } else {
+        const typingMessage = document.createElement("div");
 
-    chatMessages.appendChild(typingMessage);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+        typingMessage.classList.add("message", "bot-message");
+        typingMessage.textContent = "Sky Chatbox is typing...";
 
-    setTimeout(function () {
-        typingMessage.remove();
+        chatMessages.appendChild(typingMessage);
 
-        const answer = getBotResponse(question);
-        addMessage(answer, "bot");
-    }, 800);
+        setTimeout(function () {
+            typingMessage.remove();
+
+            addMessage(
+                "I'm sorry, I couldn't find an answer for that question yet.",
+                "bot"
+            );
+        }, 800);
+    }
 }
 
 function showSuggestions(searchText) {
@@ -120,28 +244,10 @@ function showSuggestions(searchText) {
         suggestionItem.appendChild(hint);
 
         suggestionItem.addEventListener("click", function () {
-
-    hideSuggestions();
-
-    addMessage(article.topic, "user");
-
-    const typingMessage = document.createElement("div");
-
-    typingMessage.classList.add("message", "bot-message");
-    typingMessage.textContent = "Sky Chatbox is typing...";
-
-    chatMessages.appendChild(typingMessage);
-
-    setTimeout(function () {
-
-        typingMessage.remove();
-
-        addMessage(article.answer, "bot");
-
-    }, 500);
-
-    userInput.value = "";
-});
+            userInput.value = article.topic;
+            hideSuggestions();
+            sendMessage();
+        });
 
         suggestions.appendChild(suggestionItem);
     });
