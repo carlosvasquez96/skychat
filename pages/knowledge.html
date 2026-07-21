@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sky Chatbox Knowledge Base</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-logo">
+            Sky Chatbox
+        </div>
+
+        <div class="nav-links">
+            <a href="../index.html">Chat</a>
+            <a href="knowledge.html">Knowledge Base</a>
+        </div>
+    </nav>
+
+    <main class="knowledge-page">
+
+        <section class="knowledge-header">
+            <h1>Sky Chatbox Knowledge Base</h1>
+
+            <p>
+                Browse Skyward help articles and step-by-step procedures.
+            </p>
+
+            <input type="text"
+                   id="articleSearch"
+                   placeholder="Search articles..."
+                   autocomplete="off">
+        </section>
+
+        <section class="knowledge-categories">
+
+            <div class="knowledge-category">
+                <h2>Gradebook</h2>
+
+                <div class="article-list">
+
+                    <a href="grade-changes.html" class="article-card">
+                        <h3>Grade Changes After Posting</h3>
+
+                        <p>
+                            Learn how to correct a grade after grades have
+                            already been posted.
+                        </p>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="knowledge-category">
+                <h2>Attendance</h2>
+
+                <div class="article-list">
+
+                    <div class="article-card">
+                        <h3>Taking Attendance</h3>
+
+                        <p>
+                            Basic instructions for opening the attendance
+                            screen and submitting attendance.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="knowledge-category">
+                <h2>Account Access</h2>
+
+                <div class="article-list">
+
+                    <div class="article-card">
+                        <h3>Password Reset</h3>
+
+                        <p>
+                            Learn what to do when you forget your password
+                            or become locked out.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="knowledge-category">
+                <h2>Student Management</h2>
+
+                <div class="article-list">
+
+                    <div class="article-card">
+                        <h3>Student Enrollment</h3>
+
+                        <p>
+                            Find support information for registering or
+                            enrolling a student.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script>
+        const articleSearch = document.getElementById("articleSearch");
+        const articleCards = document.querySelectorAll(".article-card");
+
+        articleSearch.addEventListener("input", function () {
+            const searchText = articleSearch.value.toLowerCase();
+
+            articleCards.forEach(function (card) {
+                const articleText = card.textContent.toLowerCase();
+
+                if (articleText.includes(searchText)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
