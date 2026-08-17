@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Procedures | SkyChat</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/knowledge-browse.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">SkyChat</div>
+        <ul>
+            <li><a href="../index.html">Chat</a></li>
+            <li><a class="active" href="knowledge.html">Browse Procedures</a></li>
+        </ul>
+    </nav>
+
+    <main class="browse-shell">
+        <header class="browse-hero">
+            <div>
+                <p class="browse-eyebrow">SKYWARD KNOWLEDGE CENTER</p>
+                <h1>Browse Procedures</h1>
+                <p class="browse-description">
+                    Search or browse step-by-step Skyward procedures from the same knowledge base used by SkyChat.
+                </p>
+            </div>
+            <a class="browse-chat-button" href="../index.html">Ask SkyChat</a>
+        </header>
+
+        <section class="browse-search-panel" aria-label="Search procedures">
+            <label for="procedureSearch">Search procedures</label>
+            <div class="browse-search-row">
+                <input
+                    id="procedureSearch"
+                    type="search"
+                    placeholder="Example: withdraw a student, no show, grade change..."
+                    autocomplete="off"
+                >
+                <button id="clearProcedureSearch" type="button">Clear</button>
+            </div>
+            <p id="procedureCount" class="browse-result-count"></p>
+        </section>
+
+        <section class="browse-layout">
+            <aside class="browse-sidebar" aria-label="Procedure categories">
+                <div class="browse-sidebar-heading">
+                    <p class="browse-eyebrow">CATEGORIES</p>
+                    <h2>Browse by Category</h2>
+                </div>
+                <div id="categoryFilters" class="browse-category-list"></div>
+            </aside>
+
+            <section class="browse-results-area">
+                <div id="browseEmptyState" class="browse-empty-state" hidden>
+                    <h2>No procedures found</h2>
+                    <p>Try a shorter phrase or choose another category.</p>
+                </div>
+
+                <div id="procedureGroups" class="browse-groups"></div>
+            </section>
+        </section>
+    </main>
+
+    <div id="procedureModal" class="procedure-modal" hidden>
+        <div class="procedure-modal-backdrop" data-close-modal></div>
+        <section class="procedure-modal-card" role="dialog" aria-modal="true" aria-labelledby="procedureModalTitle">
+            <div class="procedure-modal-header">
+                <div>
+                    <span id="procedureModalCategory" class="procedure-category-badge"></span>
+                    <h2 id="procedureModalTitle"></h2>
+                </div>
+                <button id="closeProcedureModal" class="procedure-modal-close" type="button" aria-label="Close procedure">×</button>
+            </div>
+            <div id="procedureModalBody" class="procedure-modal-body"></div>
+        </section>
+    </div>
+
+    <script src="../knowledge/accountAccess.js"></script>
+    <script src="../knowledge/attendance.js"></script>
+    <script src="../knowledge/enrollment.js"></script>
+    <script src="../knowledge/familyAccess.js"></script>
+    <script src="../knowledge/gradebook.js"></script>
+    <script src="../knowledge/scheduling.js"></script>
+    <script src="../knowledge/support.js"></script>
+
+    
+    
+    <script src="../knowledge/peims.js"></script>
+    <script src="../knowledge/dailyTasks.js"></script>
+    <script src="../knowledge/transcriptsGrades.js"></script>
+
+    <script src="../knowledge/knowledgeBase.js"></script>
+    <script src="../js/knowledgeService.js"></script>
+    <script src="knowledgeBrowse.js"></script>
+</body>
+</html>

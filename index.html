@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SkyChat pilot knowledge assistant for LISD Skyward procedures.">
+    <title>SkyChat | LISD Technology Services</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="app-nav">
+        <a class="brand" href="index.html" aria-label="SkyChat home">
+    <img src="images/skychatbox-logo.png"
+         alt="SkyChat logo"
+         style="width: 100px; height: 100px;">
+
+    <span class="brand-copy">
+        <strong>SkyChat</strong>
+        <small>LISD Technology Services</small>
+    </span>
+</a>
+        <ul>
+            <li><a class="active" href="index.html">Chat</a></li>
+            <li><a href="pages/knowledge.html">Knowledge Base</a></li>
+            <li><a href="#support">Support</a></li>
+        </ul>
+    </nav>
+
+    <header class="home-header">
+        <div class="pilot-badge">2026–2027 Pilot</div>
+        <p class="eyebrow">Skyward Knowledge Assistant</p>
+        <h1>Find Skyward answers faster.</h1>
+        <p class="header-description">
+            Ask a question or browse common topics for step-by-step guidance from LISD Skyward documentation.
+        </p>
+        <div class="stat-strip" aria-label="SkyChat status">
+            <div><strong id="articleCount">0</strong><span>Articles</span></div>
+            <div><strong id="categoryCount">0</strong><span>Categories</span></div>
+            <div><strong>2026–27</strong><span>School Year</span></div>
+            <div><strong>v1.0</strong><span>Pilot</span></div>
+        </div>
+    </header>
+
+    <main class="home-layout">
+        <section class="chat-box" aria-label="SkyChat conversation">
+            <div class="chat-header">
+                <div>
+                    <span class="online-indicator">● Online</span>
+                    <h2>Ask SkyChat</h2>
+                    <p>Use a short phrase or ask a complete question.</p>
+                </div>
+                <button id="clearChatButton" class="secondary-button" type="button">Clear chat</button>
+            </div>
+
+            <div class="quick-topics" aria-label="Suggested questions">
+                <button type="button" data-question="How do I process a no show?">No Show</button>
+                <button type="button" data-question="How do I withdraw a student?">Withdraw Student</button>
+                <button type="button" data-question="How do I approve online registration?">Online Registration</button>
+                <button type="button" data-question="How do I change a posted grade?">Grade Changes</button>
+                <button type="button" data-question="How do I access Family Access?">Family Access</button>
+            </div>
+
+            <div id="chatMessages" class="chat-messages" aria-live="polite">
+                <div class="message bot-message welcome-message">
+                    <strong>Hello! I’m SkyChat.</strong>
+                    <span>I can help you locate Skyward procedures, reports, scheduling instructions, attendance guidance, and more.</span>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <div class="input-wrapper">
+                    <label class="sr-only" for="userInput">Ask a Skyward question</label>
+                    <input type="text" id="userInput" placeholder="Example: How do I change a posted grade?" autocomplete="off">
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+                <button id="sendButton" type="button">Ask SkyChat</button>
+            </div>
+            <p class="pilot-notice">
+                Pilot resource: verify time-sensitive or student-specific situations with Technology Services.
+            </p>
+        </section>
+
+        <aside class="home-sidebar">
+            <section class="sidebar-card category-browser-card">
+                <span class="card-kicker">Explore</span>
+                <h2>Browse by Category</h2>
+                <p>Select a category to view available Skyward help articles.</p>
+                <div id="categoryBrowser" class="category-browser"></div>
+                <a href="pages/knowledge.html" class="primary-link">Open Full Knowledge Base →</a>
+            </section>
+
+            <section class="sidebar-card favorites-card">
+                <span class="card-kicker">Quick Access</span>
+                <h2>Favorite Articles</h2>
+                <p>Save frequently used instructions for quick access.</p>
+                <div id="favoritesList" class="favorites-list">
+                    <span class="favorites-empty">No favorite articles yet.</span>
+                </div>
+            </section>
+
+            <section class="sidebar-card" id="support">
+                <span class="card-kicker">Human Support</span>
+                <h2>Still Need Help?</h2>
+                <p>Contact the IT Help Desk at <strong>273-1360</strong> for account-specific or complex issues.</p>
+            </section>
+        </aside>
+    </main>
+
+    <footer class="app-footer">
+        <span>SkyChat v1.0 Pilot</span>
+        <span>LISD Technology Services · School Year 2026–2027</span>
+    </footer>
+
+    <script src="knowledge/accountAccess.js"></script>
+    <script src="knowledge/attendance.js"></script>
+    <script src="knowledge/enrollment.js"></script>
+    <script src="knowledge/familyAccess.js"></script>
+    <script src="knowledge/gradebook.js"></script>
+    <script src="knowledge/scheduling.js"></script>
+    <script src="knowledge/support.js"></script>
+    <script src="knowledge/peims.js"></script>
+    <script src="knowledge/transcriptsGrades.js"></script>
+    <script src="knowledge/dailyTasks.js"></script>
+    <script src="knowledge/dataMiningReports.js"></script>
+    <script src="knowledge/knowledgeBase.js"></script>
+    <script src="js/knowledgeService.js"></script>
+    <script src="js/conversation.js"></script>
+    <script src="js/reportFinder.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>

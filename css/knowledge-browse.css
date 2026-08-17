@@ -1,0 +1,461 @@
+/* ======================================================
+   SKY CHATBOX - BROWSE PROCEDURES
+====================================================== */
+
+.browse-shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 34px auto 60px;
+}
+
+.browse-hero {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.browse-eyebrow {
+    margin: 0 0 6px;
+    color: #1261a0;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+}
+
+.browse-hero h1 {
+    margin: 0;
+    color: #0b3157;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.browse-description {
+    max-width: 720px;
+    margin: 10px 0 0;
+    color: #53677b;
+    line-height: 1.65;
+}
+
+.browse-chat-button {
+    flex: 0 0 auto;
+    padding: 12px 18px;
+    border-radius: 10px;
+    background: #1769e8;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(23, 105, 232, 0.18);
+}
+
+.browse-search-panel,
+.browse-sidebar,
+.browse-category-group,
+.browse-empty-state {
+    border: 1px solid #d8e2ee;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(20, 56, 92, 0.07);
+}
+
+.browse-search-panel {
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.browse-search-panel label {
+    display: block;
+    margin-bottom: 8px;
+    color: #0b3157;
+    font-weight: 700;
+}
+
+.browse-search-row {
+    display: flex;
+    gap: 10px;
+}
+
+.browse-search-row input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 15px;
+    border: 1px solid #c7d5e5;
+    border-radius: 10px;
+    font: inherit;
+    outline: none;
+}
+
+.browse-search-row input:focus {
+    border-color: #1769e8;
+    box-shadow: 0 0 0 3px rgba(23, 105, 232, 0.12);
+}
+
+.browse-search-row button {
+    border: 1px solid #c7d5e5;
+    border-radius: 10px;
+    padding: 0 16px;
+    background: #f6f9fc;
+    color: #234b70;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.browse-result-count {
+    margin: 10px 0 0;
+    color: #718196;
+    font-size: 0.9rem;
+}
+
+.browse-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.browse-sidebar {
+    position: sticky;
+    top: 20px;
+    padding: 18px;
+}
+
+.browse-sidebar-heading h2 {
+    margin: 0 0 16px;
+    color: #0b3157;
+    font-size: 1.15rem;
+}
+
+.browse-category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.browse-category-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 11px 12px;
+    border: 1px solid #dae4ef;
+    border-radius: 10px;
+    background: #f8fbfe;
+    color: #163e63;
+    font: inherit;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.18s ease;
+}
+
+.browse-category-button:hover,
+.browse-category-button.active {
+    border-color: #1769e8;
+    background: #edf5ff;
+    color: #0a55c9;
+}
+
+.browse-category-count,
+.browse-group-heading span {
+    min-width: 28px;
+    padding: 3px 8px;
+    border-radius: 999px;
+    background: #e7f0fa;
+    color: #246198;
+    font-size: 0.78rem;
+    text-align: center;
+}
+
+.browse-results-area,
+.browse-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.browse-category-group {
+    padding: 20px;
+}
+
+.browse-group-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.browse-group-heading h2 {
+    margin: 0;
+    color: #0b3157;
+    font-size: 1.25rem;
+}
+
+.browse-procedure-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.browse-procedure-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 155px;
+    padding: 16px;
+    border: 1px solid #dbe5ef;
+    border-radius: 12px;
+    background: #fff;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.browse-procedure-card:hover {
+    transform: translateY(-2px);
+    border-color: #9fc2ec;
+    box-shadow: 0 10px 20px rgba(30, 84, 135, 0.09);
+}
+
+.browse-procedure-card h3 {
+    margin: 0 0 8px;
+    color: #0a4e91;
+    font-size: 1rem;
+}
+
+.browse-procedure-card p {
+    margin: 0;
+    color: #5d6f82;
+    line-height: 1.55;
+    font-size: 0.9rem;
+}
+
+.browse-procedure-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 14px;
+    color: #8090a0;
+    font-size: 0.8rem;
+}
+
+.browse-open-label {
+    color: #1769e8;
+    font-weight: 800;
+}
+
+.browse-empty-state {
+    padding: 42px 24px;
+    text-align: center;
+}
+
+.browse-empty-state h2 {
+    margin: 0 0 8px;
+    color: #0b3157;
+}
+
+.browse-empty-state p {
+    margin: 0;
+    color: #718196;
+}
+
+.procedure-modal[hidden] {
+    display: none;
+}
+
+.procedure-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.procedure-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(6, 26, 46, 0.52);
+    backdrop-filter: blur(2px);
+}
+
+.procedure-modal-card {
+    position: relative;
+    z-index: 1;
+    width: min(760px, 100%);
+    max-height: min(86vh, 900px);
+    overflow: auto;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 24px 70px rgba(5, 34, 63, 0.28);
+}
+
+.procedure-modal-header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    padding: 22px 24px 18px;
+    border-bottom: 1px solid #e1e9f1;
+    background: rgba(255, 255, 255, 0.97);
+}
+
+.procedure-modal-header h2 {
+    margin: 8px 0 0;
+    color: #0b3157;
+}
+
+.procedure-category-badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #edf5ff;
+    color: #1769e8;
+    font-size: 0.78rem;
+    font-weight: 800;
+}
+
+.procedure-modal-close {
+    width: 38px;
+    height: 38px;
+    border: 1px solid #d7e1eb;
+    border-radius: 50%;
+    background: #fff;
+    color: #36546f;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.procedure-modal-body {
+    padding: 4px 24px 26px;
+}
+
+.procedure-detail-section {
+    padding: 18px 0;
+    border-bottom: 1px solid #e2eaf2;
+}
+
+.procedure-detail-section:last-child {
+    border-bottom: 0;
+}
+
+.procedure-detail-label {
+    margin: 0 0 9px;
+    color: #47627b;
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.procedure-detail-section > p:not(.procedure-detail-label) {
+    margin: 0;
+    color: #263f57;
+    line-height: 1.7;
+}
+
+.procedure-navigation {
+    color: #0a55c9 !important;
+    font-weight: 750;
+}
+
+.procedure-detail-list {
+    margin: 0;
+    padding-left: 22px;
+    color: #263f57;
+}
+
+.procedure-detail-list li {
+    margin: 0 0 9px;
+    line-height: 1.6;
+}
+
+.procedure-source-box {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #263f57;
+}
+
+.procedure-source-box span {
+    color: #6f8192;
+    font-size: 0.9rem;
+}
+
+.procedure-related-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.procedure-related-links button {
+    padding: 8px 10px;
+    border: 1px solid #b8d1f1;
+    border-radius: 8px;
+    background: #f4f8ff;
+    color: #0a55c9;
+    cursor: pointer;
+}
+
+.procedure-modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 820px) {
+    .browse-hero {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .browse-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .browse-sidebar {
+        position: static;
+    }
+
+    .browse-category-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .browse-shell {
+        width: min(100% - 20px, 1180px);
+        margin-top: 20px;
+    }
+
+    .browse-search-row {
+        flex-direction: column;
+    }
+
+    .browse-search-row button {
+        min-height: 44px;
+    }
+
+    .browse-procedure-grid,
+    .browse-category-list {
+        grid-template-columns: 1fr;
+    }
+
+    .procedure-modal {
+        padding: 10px;
+    }
+
+    .procedure-modal-card {
+        max-height: 92vh;
+    }
+
+    .procedure-modal-header,
+    .procedure-modal-body {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+}
