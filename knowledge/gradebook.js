@@ -67,5 +67,71 @@ const gradebook = [
             "Gradebook",
             "Support"
         ]
-    }
+    },
+    {
+    topic: "Make a Grade Change After Grades Have Been Posted",
+
+    category: "Gradebook",
+
+    keywords: [
+        "grade change after posting",
+        "change posted grade",
+        "closed reporting period",
+        "closed grading period",
+        "request grade changes",
+        "complete grade changes",
+        "change grade after report card",
+        "teacher grade change",
+        "posted grades",
+        "how do i change a grade after grades are posted"
+    ],
+
+    summary:
+        "Change a student's grade after the grading period has closed and grades have already been posted.",
+
+    purpose:
+        "Use this procedure when a teacher needs to request access to a closed grading period, make a grade correction, and complete the grade-change process.",
+
+    navigation: [
+        "Teacher Access",
+        "My Gradebook",
+        "Posting Status"
+    ],
+
+    procedure: [
+        "Log in to your Gradebook.",
+        "Open Posting Status.",
+        "Select the grading period that needs to be changed.",
+        "Highlight the class that requires the grade change.",
+        "Click Request Grade Changes.",
+        "Enter the reason for requesting the grade change.",
+        "Click Yes to proceed.",
+        "Return to the gradebook for the selected class.",
+        "Enter or change the necessary grade.",
+        "Click Save after making the grade change.",
+        "Click Back to return to the Grade Posting Status screen.",
+        "Click Complete Grade Changes when you are finished with that class.",
+        "Repeat the process for any additional classes that require changes."
+    ],
+
+    notes: [
+        "The Request Grade Changes window provides temporary access to modify the closed grading period.",
+        "Be sure to enter a reason for the requested grade change.",
+        "Always click Save after entering or changing the grade.",
+        "When finished with the class, click Complete Grade Changes.",
+        "Repeat the process separately for each class that requires a grade change."
+    ],
+
+    manual:
+        "Making a Grade Change in Skyward for a Closed Reporting Period",
+
+    page:
+        "1-4",
+        
+    pdf: "manuals/grade-change-closed-reporting-period.pdf",
+
+    related: [
+        "Grade Changes After Posting"
+    ]
+},
 ];
