@@ -221,5 +221,69 @@ const gradebook = [
         "Grade Changes After Posting"
     ]
 },
+{
+    topic: "Drop a Student from a Course",
+    category: "Gradebook",
+
+    keywords: [
+        "drop a student",
+        "drop student from course",
+        "drop a class",
+        "drop course",
+        "drop class",
+        "withdraw student from course",
+        "remove student from class",
+        "delete class"
+    ],
+
+    summary:
+        "Instructions for dropping a student from a course in Skyward.",
+
+    purpose:
+        "Use Entry by Student in Current Scheduling to drop a student from a course while maintaining the appropriate enrollment transaction record.",
+
+    navigation: [
+        "Student Management",
+        "Office",
+        "Current Scheduling",
+        "Entry by Student"
+    ],
+
+    procedure: [
+        "Go to Student Management → Office → Current Scheduling → Entry by Student.",
+        "Click Entry by Student.",
+        "On the Entry by Student screen, select the student you want to drop.",
+        "Click the arrow to expand the student's options.",
+        "Locate the student's schedule and expand the schedule options.",
+        "Locate the course from which the student needs to be dropped.",
+        "Select the D option corresponding to the course.",
+        "Review the Delete or Drop/Deactivate This Class prompt.",
+        "If prompted because there are no grades present, choose Drop when the student should be dropped from the course while retaining the enrollment transaction record.",
+        "Review any warning about the effective date.",
+        "Complete the drop."
+    ],
+
+    notes: [
+        "If there are no grades present, Skyward may prompt you to either Delete or Drop the class.",
+        "Deleting the class removes the transaction connecting the student to the course section.",
+        "Dropping the class keeps a transaction record of the student's enrollment in the course.",
+        "The enrollment transaction may be used for state reporting.",
+        "A dropped class may be more easily reactivated for the student.",
+        "Pay attention to any effective-date warning."
+    ],
+
+    manual:
+        "Dropping a Class",
+
+    page:
+        "1-2",
+
+    pdf:
+        "manuals/Drop Student from Course.pdf",
+
+    related: [
+        "Gradebook"
+    ]
+},
 
 ];
