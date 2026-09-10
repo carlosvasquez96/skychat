@@ -431,7 +431,58 @@ if (article.manual || article.page) {
 
     card.appendChild(sourceContainer);
 }
+// --------------------------------------------------
+// PDF Guide
+// --------------------------------------------------
 
+if (article.pdf) {
+    const pdfDivider =
+        document.createElement("hr");
+
+    pdfDivider.classList.add(
+        "response-divider"
+    );
+
+    card.appendChild(pdfDivider);
+
+
+    const pdfTitle =
+        document.createElement("p");
+
+    pdfTitle.classList.add(
+        "section-label"
+    );
+
+    pdfTitle.textContent =
+        "PDF Guide";
+
+    card.appendChild(pdfTitle);
+
+
+    const pdfButton =
+        document.createElement("button");
+
+    pdfButton.type = "button";
+
+    pdfButton.classList.add(
+        "document-button"
+    );
+
+    pdfButton.textContent =
+        "📄 View PDF Guide";
+
+    pdfButton.addEventListener(
+        "click",
+        function () {
+            window.open(
+                article.pdf,
+                "_blank"
+            );
+        }
+    );
+
+    card.appendChild(pdfButton);
+}
 // --------------------------------------------------
 // Documents / Guides
 // --------------------------------------------------
@@ -504,6 +555,7 @@ if (
 
     card.appendChild(documentsContainer);
 }
+
    // --------------------------------------------------
 // Related articles
 // --------------------------------------------------

@@ -68,29 +68,34 @@ const gradebook = [
             "Support"
         ]
     },
-    {
-    topic: "Make a Grade Change After Grades Have Been Posted",
+   {
+    topic: "Changing Grades from a Previous Six Weeks",
 
     category: "Gradebook",
 
     keywords: [
-        "grade change after posting",
+        "change grades from a previous six weeks",
+        "change grade from previous six weeks",
+        "previous six weeks grade",
+        "previous grading period",
         "change posted grade",
-        "closed reporting period",
-        "closed grading period",
+        "change a previous grade",
+        "grade change",
+        "grade changes",
         "request grade changes",
-        "complete grade changes",
-        "change grade after report card",
-        "teacher grade change",
-        "posted grades",
-        "how do i change a grade after grades are posted"
+        "request a grade change",
+        "change grades after posting",
+        "change a grade after grades are posted",
+        "closed grading period",
+        "closed reporting period",
+        "complete grade changes"
     ],
 
     summary:
-        "Change a student's grade after the grading period has closed and grades have already been posted.",
+        "Change grades from a previous six weeks grading period after grades have been posted.",
 
     purpose:
-        "Use this procedure when a teacher needs to request access to a closed grading period, make a grade correction, and complete the grade-change process.",
+        "Use this procedure when a teacher needs to make changes to grades from a previous six weeks grading period.",
 
     navigation: [
         "Teacher Access",
@@ -99,39 +104,122 @@ const gradebook = [
     ],
 
     procedure: [
-        "Log in to your Gradebook.",
-        "Open Posting Status.",
-        "Select the grading period that needs to be changed.",
-        "Highlight the class that requires the grade change.",
-        "Click Request Grade Changes.",
-        "Enter the reason for requesting the grade change.",
+        "Log into Skyward and click on Teacher Access.",
+        "Click on My Gradebook.",
+        "Click on the Posting Status drop-down menu.",
+        "Select the Six Weeks term where you need to make changes.",
+        "Highlight the class where you want to make grade changes.",
+        "Click Request Grade Changes on the right side of the screen.",
+        "Enter a reason for changing the grade.",
         "Click Yes to proceed.",
-        "Return to the gradebook for the selected class.",
-        "Enter or change the necessary grade.",
-        "Click Save after making the grade change.",
-        "Click Back to return to the Grade Posting Status screen.",
-        "Click Complete Grade Changes when you are finished with that class.",
-        "Repeat the process for any additional classes that require changes."
+        "The gradebook for that class will open.",
+        "Make the necessary grade changes.",
+        "When finished, click the Back button in the upper-right corner.",
+        "Return to the list of classes and check the Diff column.",
+        "Click Complete Grade Changes on the right side of the screen.",
+        "The request will be submitted for administrator approval.",
+        "If approved by an administrator, the grade changes will be posted automatically.",
+        "Repeat the process for each additional class that requires changes."
     ],
 
     notes: [
-        "The Request Grade Changes window provides temporary access to modify the closed grading period.",
-        "Be sure to enter a reason for the requested grade change.",
-        "Always click Save after entering or changing the grade.",
-        "When finished with the class, click Complete Grade Changes.",
-        "Repeat the process separately for each class that requires a grade change."
+        "A reason must be entered when requesting the grade change.",
+        "The grade changes are submitted for administrator approval.",
+        "Approved grade changes will be posted automatically.",
+        "Repeat the process for each class that requires grade changes."
     ],
 
     manual:
-        "Making a Grade Change in Skyward for a Closed Reporting Period",
+        "Changing Grades from a Previous Six Weeks",
 
     page:
-        "1-4",
-        
-    pdf: "manuals/grade-change-closed-reporting-period.pdf",
+        "1-2",
 
     related: [
         "Grade Changes After Posting"
     ]
 },
+{
+    topic: "A and A/B Honor Roll in Skyward",
+    category: "Gradebook",
+
+    keywords: [
+        "honor roll",
+        "A honor roll",
+        "A/B honor roll",
+        "AB honor roll",
+        "honor roll report",
+        "run honor roll",
+        "create honor roll",
+        "print honor roll",
+        "grade mark points"
+    ],
+
+    summary:
+        "Instructions for creating and running an A and A/B Honor Roll report in Skyward.",
+
+    purpose:
+        "Use the Honor Roll report to create an A Honor Roll and an A/B Honor Roll based on grade mark points for a selected grading period.",
+
+    navigation: [
+        "Office",
+        "Grading",
+        "Reports",
+        "Honor Roll"
+    ],
+
+    procedure: [
+        "Go to Office, Grading, Reports, Honor Roll.",
+        "Add a new template.",
+        "Give the template a description such as \"A & A/B Honor Roll\" and click Add.",
+        "Click the Ranges button.",
+        "Change Student Status to Active and click Save.",
+        "Change Grading Period to Run for Grading Period and choose the grading period you want to use.",
+        "Under Honor Roll Type, select Grade Mark Points.",
+        "Under Honor Roll Ranges, check Only include student in one Honor Roll Range.",
+        "Configure the first range and name it A Honor Roll.",
+        "Click the Options button for the A Honor Roll range.",
+        "Enter 1 in Exclude Students who have at least ___ of the selected grade marks.",
+        "Select All Grades.",
+        "Uncheck Blank Grade Bucket, 93-100, S, and P.",
+        "Under Grade Buckets to Use, select the term you are working on, such as Q1.",
+        "Configure Class Lengths according to whether related arts are being included.",
+        "Set Student Class Status to Enrolled.",
+        "Click OK.",
+        "Configure the second Honor Roll range and give it a description such as A/B Honor Roll.",
+        "Click the Options button for the second range.",
+        "Enter 1 in Exclude Students who have at least ___ of the selected grade marks.",
+        "Select all Grades and uncheck Blank grades, 85-100, A, B, S, and P.",
+        "Choose the term you are working on.",
+        "Configure Courses to Use the same way as the first Honor Roll range.",
+        "Click OK.",
+        "Sort the report by grade or homeroom, depending on your preference.",
+        "Save and Print."
+    ],
+
+    notes: [
+        "The Honor Roll report uses Grade Mark Points.",
+        "For the A Honor Roll range, the instructions specify excluding Blank Grade Bucket, 93-100, S, and P.",
+        "For the A/B Honor Roll range, the instructions specify excluding Blank grades, 85-100, A, B, S, and P.",
+        "Class Length settings depend on whether related arts are included in the Honor Roll.",
+        "Including or excluding related arts grades is determined by the principal.",
+        "Student Class Status should be set to Enrolled.",
+        "The report can be sorted by grade or homeroom."
+    ],
+
+    manual:
+        "A and A/B Honor Roll in Skyward",
+
+    page:
+        "1-3",
+
+    pdf:
+        "manuals/skyward Honor_Roll.pdf.pdf",
+
+    related: [
+        "Gradebook",
+        "Grade Changes After Posting"
+    ]
+},
+
 ];

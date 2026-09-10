@@ -138,16 +138,20 @@ answer:
                 ? article.related
                 : [],
 
-        manual:
-            article.manual ||
-            article.sourceManual ||
-            "",
+       manual:
+    article.manual ||
+    article.sourceManual ||
+    "",
 
-        page:
-            article.page ||
-            "",
+page:
+    article.page ||
+    "",
 
-        source
+pdf:
+    article.pdf ||
+    "",
+
+source
     };
 }
 
@@ -275,7 +279,8 @@ function saveKnowledgeArticle(
     answer: normalizedArticle.answer,
     related: normalizedArticle.related,
     manual: normalizedArticle.manual,
-    page: normalizedArticle.page
+    page: normalizedArticle.page,
+    pdf: normalizedArticle.pdf
 });
 
     saveStoredCustomArticles(
