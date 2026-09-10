@@ -3,132 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sky Chatbox Knowledge Base</title>
-
+    <title>Browse Procedures | SkyChat</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/knowledge-browse.css">
 </head>
-
 <body>
-
-    <nav class="navbar">
-        <div class="nav-logo">
-            Sky Chatbox
-        </div>
-
-        <div class="nav-links">
-            <a href="../index.html">Chat</a>
-            <a href="knowledge.html">Knowledge Base</a>
-        </div>
+    <nav>
+        <div class="logo">SkyChat</div>
+        <ul>
+            <li><a href="../index.html">Chat</a></li>
+            <li><a class="active" href="knowledge.html">Browse Procedures</a></li>
+        </ul>
     </nav>
 
-    <main class="knowledge-page">
+    <main class="browse-shell">
+        <header class="browse-hero">
+            <div>
+                <p class="browse-eyebrow">SKYWARD KNOWLEDGE CENTER</p>
+                <h1>Browse Procedures</h1>
+                <p class="browse-description">
+                    Search or browse step-by-step Skyward procedures from the same knowledge base used by SkyChat.
+                </p>
+            </div>
+            <a class="browse-chat-button" href="../index.html">Ask SkyChat</a>
+        </header>
 
-        <section class="knowledge-header">
-            <h1>Sky Chatbox Knowledge Base</h1>
-
-            <p>
-                Browse Skyward help articles and step-by-step procedures.
-            </p>
-
-            <input type="text"
-                   id="articleSearch"
-                   placeholder="Search articles..."
-                   autocomplete="off">
+        <section class="browse-search-panel" aria-label="Search procedures">
+            <label for="procedureSearch">Search procedures</label>
+            <div class="browse-search-row">
+                <input
+                    id="procedureSearch"
+                    type="search"
+                    placeholder="Example: withdraw a student, no show, grade change..."
+                    autocomplete="off"
+                >
+                <button id="clearProcedureSearch" type="button">Clear</button>
+            </div>
+            <p id="procedureCount" class="browse-result-count"></p>
         </section>
 
-        <section class="knowledge-categories">
-
-            <div class="knowledge-category">
-                <h2>Gradebook</h2>
-
-                <div class="article-list">
-
-                    <a href="grade-changes.html" class="article-card">
-                        <h3>Grade Changes After Posting</h3>
-
-                        <p>
-                            Learn how to correct a grade after grades have
-                            already been posted.
-                        </p>
-                    </a>
-
+        <section class="browse-layout">
+            <aside class="browse-sidebar" aria-label="Procedure categories">
+                <div class="browse-sidebar-heading">
+                    <p class="browse-eyebrow">CATEGORIES</p>
+                    <h2>Browse by Category</h2>
                 </div>
-            </div>
+                <div id="categoryFilters" class="browse-category-list"></div>
+            </aside>
 
-            <div class="knowledge-category">
-                <h2>Attendance</h2>
-
-                <div class="article-list">
-
-                    <div class="article-card">
-                        <h3>Taking Attendance</h3>
-
-                        <p>
-                            Basic instructions for opening the attendance
-                            screen and submitting attendance.
-                        </p>
-                    </div>
-
+            <section class="browse-results-area">
+                <div id="browseEmptyState" class="browse-empty-state" hidden>
+                    <h2>No procedures found</h2>
+                    <p>Try a shorter phrase or choose another category.</p>
                 </div>
-            </div>
 
-            <div class="knowledge-category">
-                <h2>Account Access</h2>
-
-                <div class="article-list">
-
-                    <div class="article-card">
-                        <h3>Password Reset</h3>
-
-                        <p>
-                            Learn what to do when you forget your password
-                            or become locked out.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="knowledge-category">
-                <h2>Student Management</h2>
-
-                <div class="article-list">
-
-                    <div class="article-card">
-                        <h3>Student Enrollment</h3>
-
-                        <p>
-                            Find support information for registering or
-                            enrolling a student.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-
+                <div id="procedureGroups" class="browse-groups"></div>
+            </section>
         </section>
-
     </main>
 
-    <script>
-        const articleSearch = document.getElementById("articleSearch");
-        const articleCards = document.querySelectorAll(".article-card");
+    <div id="procedureModal" class="procedure-modal" hidden>
+        <div class="procedure-modal-backdrop" data-close-modal></div>
+        <section class="procedure-modal-card" role="dialog" aria-modal="true" aria-labelledby="procedureModalTitle">
+            <div class="procedure-modal-header">
+                <div>
+                    <span id="procedureModalCategory" class="procedure-category-badge"></span>
+                    <h2 id="procedureModalTitle"></h2>
+                </div>
+                <button id="closeProcedureModal" class="procedure-modal-close" type="button" aria-label="Close procedure">×</button>
+            </div>
+            <div id="procedureModalBody" class="procedure-modal-body"></div>
+        </section>
+    </div>
 
-        articleSearch.addEventListener("input", function () {
-            const searchText = articleSearch.value.toLowerCase();
+    <script src="../knowledge/accountAccess.js"></script>
+    <script src="../knowledge/attendance.js"></script>
+    <script src="../knowledge/enrollment.js"></script>
+    <script src="../knowledge/familyAccess.js"></script>
+    <script src="../knowledge/gradebook.js"></script>
+    <script src="../knowledge/scheduling.js"></script>
+    <script src="../knowledge/support.js"></script>
 
-            articleCards.forEach(function (card) {
-                const articleText = card.textContent.toLowerCase();
+    
+    
+    <script src="../knowledge/peims.js"></script>
+    <script src="../knowledge/dailyTasks.js"></script>
+    <script src="../knowledge/transcriptsGrades.js"></script>
 
-                if (articleText.includes(searchText)) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
-        });
-    </script>
-
+    <script src="../knowledge/knowledgeBase.js"></script>
+    <script src="../js/knowledgeService.js"></script>
+    <script src="knowledgeBrowse.js"></script>
 </body>
 </html>

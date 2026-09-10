@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sky Chatbox Knowledge Manager</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+</head>
+
+<body>
+
+    <header class="admin-header">
+
+        <p class="admin-eyebrow">
+            SKY CHATBOX MANAGEMENT
+        </p>
+
+        <h1>
+            Knowledge Manager
+        </h1>
+
+        <p>
+            Add, edit, search, and manage Sky Chatbox articles.
+        </p>
+
+    </header>
+
+
+    <main class="admin-main">
+        <aside class="admin-sidebar">
+
+    <div class="sidebar-logo">
+
+        🤖
+
+        <h2>Sky Chatbox</h2>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a
+    href="#"
+    id="dashboardSidebarLink"
+    class="sidebar-link active"
+>
+    🏠 Dashboard
+</a>
+
+        <a
+    href="#"
+    id="articlesSidebarLink"
+    class="sidebar-link"
+>
+    📚 Articles
+</a>
+
+        <a
+            href="#"
+            class="sidebar-link"
+        >
+            📈 Analytics
+        </a>
+
+        <a
+            href="#"
+            class="sidebar-link"
+        >
+            ❓ Unanswered
+        </a>
+
+        <a
+    href="#favorites"
+    id="favoritesSidebarLink"
+    class="sidebar-link"
+>
+    ⭐ Favorites
+</a>
+
+        <a
+            href="#"
+            class="sidebar-link"
+        >
+            ⚙ Settings
+        </a>
+
+    </nav>
+
+</aside>
+<div class="admin-content">
+
+<div id="dashboardView" class="admin-view">
+
+    <section id="dashboardPanel" class="admin-panel">
+    
+    <div class="admin-panel-heading">
+
+        <div>
+            <h2>Dashboard</h2>
+
+            <p>
+                Overview of your Sky Chatbox knowledge base.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="knowledge-dashboard-grid">
+
+    <div class="knowledge-dashboard-card">
+        <div class="knowledge-dashboard-icon">
+            📚
+        </div>
+
+        <div>
+            <span class="knowledge-dashboard-label">
+                Total Articles
+            </span>
+
+            <strong
+                id="dashboardTotalArticles"
+                class="knowledge-dashboard-number"
+            >
+                0
+            </strong>
+        </div>
+    </div>
+
+    <div class="knowledge-dashboard-card">
+        <div class="knowledge-dashboard-icon">
+            ✏️
+        </div>
+
+        <div>
+            <span class="knowledge-dashboard-label">
+                Custom Articles
+            </span>
+
+            <strong
+                id="dashboardCustomArticles"
+                class="knowledge-dashboard-number"
+            >
+                0
+            </strong>
+        </div>
+    </div>
+
+    <div class="knowledge-dashboard-card">
+        <div class="knowledge-dashboard-icon">
+            📂
+        </div>
+
+        <div>
+            <span class="knowledge-dashboard-label">
+                Categories
+            </span>
+
+            <strong
+                id="dashboardCategories"
+                class="knowledge-dashboard-number"
+            >
+                0
+            </strong>
+        </div>
+    </div>
+
+    <div class="knowledge-dashboard-card">
+        <div class="knowledge-dashboard-icon">
+            🙈
+        </div>
+
+        <div>
+            <span class="knowledge-dashboard-label">
+                Hidden Articles
+            </span>
+
+            <strong
+                id="dashboardHiddenArticles"
+                class="knowledge-dashboard-number"
+            >
+                0
+            </strong>
+        </div>
+    </div>
+
+    <div class="knowledge-dashboard-card">
+        <div class="knowledge-dashboard-icon">
+            💾
+        </div>
+
+        <div>
+            <span class="knowledge-dashboard-label">
+                Last Backup
+            </span>
+
+            <strong
+                id="dashboardLastBackup"
+                class="knowledge-dashboard-date"
+            >
+                Never
+            </strong>
+        </div>
+    </div>
+
+</div>
+
+</section>
+       <section class="admin-panel">
+        
+    <div class="admin-panel-heading">
+
+        <div>
+            <h2>Recent Activity</h2>
+
+            <p>
+                Latest changes made in the Knowledge Manager.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div
+        id="recentActivityList"
+        class="recent-activity-list"
+    >
+
+        <p class="admin-empty-message">
+            No recent activity yet.
+        </p>
+
+    </div>
+
+</section>
+
+</div>
+
+<!-- END: Paste this new section -->
+
+<div id="articlesView" class="admin-view">
+
+
+<section id="articlesPanel" class="admin-panel">
+
+    <div class="admin-panel-heading">
+
+        <div>
+                    <h2>Knowledge Articles</h2>
+
+                    <p>
+                        Manage articles available in Sky Chatbox.
+                    </p>
+                </div>
+
+                <div class="knowledge-heading-actions">
+
+    <button
+        id="importArticlesButton"
+        class="knowledge-secondary-button"
+        type="button"
+    >
+        Import Articles
+    </button>
+
+    <button
+        id="exportArticlesButton"
+        class="knowledge-secondary-button"
+        type="button"
+    >
+        Export Articles
+    </button>
+
+    <button
+        id="newArticleButton"
+        class="knowledge-primary-button"
+        type="button"
+    >
+        + New Article
+    </button>
+
+</div>
+
+<input
+    id="importArticlesInput"
+    type="file"
+    accept=".json"
+    hidden
+>
+
+            </div>
+
+
+            <div class="knowledge-toolbar">
+
+                <label
+                    for="articleSearchInput"
+                    class="visually-hidden"
+                >
+                    Search articles
+                </label>
+
+                <input
+                    id="articleSearchInput"
+                    class="knowledge-search-input"
+                    type="search"
+                    placeholder="Search articles..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <div
+                id="knowledgeArticleList"
+                class="knowledge-article-list"
+            >
+
+                <p class="admin-empty-message">
+                    No articles are available.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section
+    id="articleFormPanel"
+    class="admin-panel knowledge-form-panel"
+    hidden
+>
+
+            <div class="admin-panel-heading">
+
+                <div>
+                    <h2 id="articleFormTitle">
+                        New Article
+                    </h2>
+
+                    <p>
+                        Complete the fields below and save the article.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <form id="knowledgeArticleForm">
+
+                <input
+                    id="editingArticleIndex"
+                    type="hidden"
+                    value=""
+                >
+
+
+                <div class="knowledge-form-group">
+
+                    <label for="articleTopic">
+                        Topic
+                    </label>
+
+                    <input
+                        id="articleTopic"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="knowledge-form-group">
+
+                    <label for="articleCategory">
+                        Category
+                    </label>
+
+                    <input
+                        id="articleCategory"
+                        type="text"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="knowledge-form-group">
+
+                    <label for="articleKeywords">
+                        Keywords
+                    </label>
+
+                    <input
+                        id="articleKeywords"
+                        type="text"
+                        placeholder="password, login, reset"
+                    >
+
+                    <small>
+                        Separate each keyword with a comma.
+                    </small>
+
+                </div>
+
+
+                <div class="knowledge-form-group">
+
+                    <label for="articleSummary">
+                        Summary
+                    </label>
+
+                    <textarea
+                        id="articleSummary"
+                        rows="3"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="knowledge-form-group">
+
+                    <label for="articleAnswer">
+                        Answer
+                    </label>
+
+                    <textarea
+                        id="articleAnswer"
+                        rows="10"
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <div class="knowledge-form-actions">
+
+                    <button
+                        class="knowledge-primary-button"
+                        type="submit"
+                    >
+                        Save Article
+                    </button>
+
+                    <button
+                        id="cancelArticleButton"
+                        class="knowledge-secondary-button"
+                        type="button"
+                    >
+                        Cancel
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+</div>
+ <div
+        id="favoritesView"
+        class="admin-view"
+        hidden
+    >
+
+    <section class="admin-panel">
+
+        <div class="admin-panel-heading">
+
+            <div>
+                <h2>Favorite Articles</h2>
+
+                <p>
+                    Articles you have saved as favorites.
+                </p>
+            </div>
+
+        </div>
+
+        <div
+            id="favoriteArticleList"
+            class="knowledge-article-list"
+        >
+
+            <p class="admin-empty-message">
+                No favorite articles yet.
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+</main>
+
+
+    <!-- Knowledge-base files -->
+
+    <script src="../knowledge/accountAccess.js"></script>
+    <script src="../knowledge/attendance.js"></script>
+    <script src="../knowledge/enrollment.js"></script>
+    <script src="../knowledge/familyAccess.js"></script>
+    <script src="../knowledge/gradebook.js"></script>
+    <script src="../knowledge/scheduling.js"></script>
+    <script src="../knowledge/support.js"></script>
+    <script src="../knowledge/knowledgeBase.js"></script>
+
+    <script src="../js/knowledgeManager.js"></script>
+
+</body>
+
+</html>

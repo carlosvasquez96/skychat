@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>SkyChat Admin</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/style.css"
+    >
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+            SkyChat Admin
+        </div>
+
+        <ul>
+            <li>
+                <a href="../index.html">
+                    Chat
+                </a>
+            </li>
+
+            <li>
+                <a href="knowledge.html">
+                    Knowledge Base
+                </a>
+            </li>
+
+            <li>
+                <a href="admin.html">
+                    Admin
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="admin-header">
+        <p class="eyebrow">
+            SkyChat Management
+        </p>
+
+        <h1>Admin Dashboard</h1>
+
+        <p class="header-description">
+            Review knowledge-base statistics and questions
+            SkyChat could not answer.
+        </p>
+    </header>
+
+    <main class="admin-layout">
+
+        <section class="admin-stat-grid">
+
+            <article class="admin-stat-card">
+                <span class="admin-stat-label">
+                    Knowledge Articles
+                </span>
+
+                <strong
+                    id="articleCount"
+                    class="admin-stat-number"
+                >
+                    0
+                </strong>
+            </article>
+
+            <article class="admin-stat-card">
+                <span class="admin-stat-label">
+                    Categories
+                </span>
+
+                <strong
+                    id="categoryCount"
+                    class="admin-stat-number"
+                >
+                    0
+                </strong>
+            </article>
+
+            <article class="admin-stat-card">
+                <span class="admin-stat-label">
+                    Favorite Articles
+                </span>
+
+                <strong
+                    id="favoriteCount"
+                    class="admin-stat-number"
+                >
+                    0
+                </strong>
+            </article>
+
+            <article class="admin-stat-card">
+                <span class="admin-stat-label">
+                    Unanswered Questions
+                </span>
+
+                <strong
+                    id="unansweredCount"
+                    class="admin-stat-number"
+                >
+                    0
+                </strong>
+            </article>
+
+        </section>
+<section class="admin-panel">
+
+    <div class="admin-panel-heading">
+
+        <div>
+
+            <h2>Top Viewed Articles</h2>
+
+            <p>
+                Articles viewed most frequently.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div
+        id="topArticlesList"
+        class="top-articles-list"
+    >
+
+        <p class="admin-empty-message">
+            No article views have been recorded.
+        </p>
+
+    </div>
+
+</section>
+        <section class="admin-panel">
+
+            <div class="admin-panel-heading">
+                <div>
+                    <h2>Unanswered Questions</h2>
+
+                    <p>
+                        These questions did not match an article
+                        in the knowledge base.
+                    </p>
+                </div>
+
+                <button
+                    id="clearUnansweredButton"
+                    class="admin-danger-button"
+                    type="button"
+                >
+                    Clear List
+                </button>
+            </div>
+
+            <div
+                id="unansweredQuestionsList"
+                class="unanswered-questions-list"
+            >
+                <p class="admin-empty-message">
+                    No unanswered questions have been recorded.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="../knowledge/accountAccess.js"></script>
+    <script src="../knowledge/attendance.js"></script>
+    <script src="../knowledge/enrollment.js"></script>
+    <script src="../knowledge/familyAccess.js"></script>
+    <script src="../knowledge/gradebook.js"></script>
+    <script src="../knowledge/scheduling.js"></script>
+    <script src="../knowledge/support.js"></script>
+    <script src="../knowledge/peims.js"></script>
+    <script src="../knowledge/dailyTasks.js"></script>
+    <script src="../knowledge/transcriptsGrades.js"></script>
+    <script src="../knowledge/knowledgeBase.js"></script>
+
+    <script src="../admin.js"></script>
+
+</body>
+
+</html>
